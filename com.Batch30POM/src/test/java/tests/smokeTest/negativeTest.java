@@ -20,7 +20,7 @@ public class negativeTest {
         //3) Login butonuna bas
         //4) Verilen senaryolar ile giris yapilamadigini test et
         QAConcortPage qaConcortPage;
-    @Test (priority = -5)
+    @Test (priority = -5   , groups = "birinciGrup")
     public void yanlisPassword(){
         // - yanlisSifre
         Driver.getDriver().get(ConfigReader.getProperty("CHQAUrl"));
@@ -38,7 +38,7 @@ public class negativeTest {
 
     }
 
-    @Test(dependsOnMethods = "yanlisPassword")
+    @Test(dependsOnMethods = "yanlisPassword" , groups = "birinciGrup")
     public void yanlisKullanici(){
        qaConcortPage=new QAConcortPage();
        qaConcortPage.userNameKutusu.clear();
